@@ -7,6 +7,6 @@ RUN pip3 install jupyter
 RUN apt-get install -y netcat
 RUN mkdir /notebooks
 
-EXPOSE 8080 7077 8888
+EXPOSE 8080 7077 8888 4040
 
 CMD ["/bin/bash", "/start-master.sh"] 
