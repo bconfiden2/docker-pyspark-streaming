@@ -10,6 +10,7 @@ Run Spark Cluster for Stream Processing, with using
 ### Run
 ```
 cd REPO_DIR
+sudo apt-get install -y docker-compose
 bash start-cluster.sh
 ```
 
