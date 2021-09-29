@@ -5,13 +5,13 @@ import os
 import signal
 
 def handler(sig, frame):
-    os.system('rm data/data_*')
+    os.system('rm data/Structured_Streaming/data_*')
     sys.exit()
 
 signal.signal(signal.SIGINT, handler)
 idx = 1
 while True:
-    with open(f"data/data_"+str(idx).zfill(4)+".csv", "w") as f:
+    with open(f"data/Structured_Streaming/data_"+str(idx).zfill(4)+".csv", "w") as f:
         for i in range(50):
             qty = str(random.randint(1,10))
             price = str(round(random.uniform(1.0, 21.0), 2))
