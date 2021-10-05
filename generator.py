@@ -45,5 +45,5 @@ if not len(sys.argv) > 1:
     sys.exit()
 if int(sys.argv[1]) == 2:
     basic_operations()
-elif int(sys.argv[1]) == 3:
+elif int(sys.argv[1]) in (3, 4):
     window()
