@@ -5,14 +5,14 @@ import os
 import signal
 
 def handler2(sig, frame):
-    os.system('rm data/Structured_Streaming/data_*')
+    os.system('rm data/data_*')
     sys.exit()
 
 def basic_operations():
     signal.signal(signal.SIGINT, handler2)
     idx = 1
     while True:
-        with open(f"data/Structured_Streaming/data_"+str(idx).zfill(4)+".csv", "w") as f:
+        with open(f"data/data_"+str(idx).zfill(4)+".csv", "w") as f:
             for i in range(50):
                 qty = str(random.randint(1,10))
                 price = str(round(random.uniform(1.0, 21.0), 2))
@@ -27,14 +27,14 @@ length3 = 1
 def handler3(sig, frame):
     global length3
     for idx in range(1, length3+1):
-        os.system(f"mv data/Structured_Streaming/twitter_{str(idx).zfill(2)} data/Structured_Streaming/Twitter/twitter_{str(idx).zfill(2)}")
+        os.system(f"mv data/twitter_{str(idx).zfill(2)} data/Twitter/twitter_{str(idx).zfill(2)}")
     sys.exit()
 
 def window():
     global length3
     signal.signal(signal.SIGINT, handler3)
     for idx in range(1, 31):
-        os.system(f"mv data/Structured_Streaming/Twitter/twitter_{str(idx).zfill(2)} data/Structured_Streaming/twitter_{str(idx).zfill(2)}")
+        os.system(f"mv data/Twitter/twitter_{str(idx).zfill(2)} data/twitter_{str(idx).zfill(2)}")
         length3 = idx
         time.sleep(5)
     signal.pause()
