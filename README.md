@@ -1,15 +1,13 @@
-# docker-spark-cluster
+# docker-pyspark-streaming-cluster
 
 Run Spark Cluster for Stream Processing, with using
 - pyspark (driver=jupyter notebook)
 - dockerfile
 - docker-compose
 
-<br>
-
 ### Run
 ```
-cd REPO_DIR
+cd [REPOSITORY]
 sudo apt-get install -y docker-compose
 bash start-cluster.sh
 ```
@@ -21,8 +19,6 @@ You might see weird red texts that looks like an error message, but it's just a 
 After master/worker containers are made, you can access the pyspark running on the cluster, from ```localhost:8889```.
 
 Some notebook files(.ipynb) are in ```/notebooks``` directory in master container, and it is connected with ```REPO_DIR/codes``` directory of HostOS, by docker volume.
-
-<br>
 
 ### Stop
 ```
